@@ -48,7 +48,7 @@ export const fetchBooks = createAsyncThunk<any, boolean, { state: RootState, rej
                 const book: IBook = {
                     title: bookItem.volumeInfo.title,
                     id: bookItem.id,
-                    author: bookItem.volumeInfo.authors,
+                    author: bookItem.volumeInfo.authors ?? [],
                     categories: bookItem.volumeInfo.categories,
                     description: bookItem.volumeInfo.description,
                     imageLinks: bookItem.volumeInfo.imageLinks ?? {smallThumbnail: '', thumbnail: ''}
@@ -83,11 +83,10 @@ export const fetchDeatilsBook = createAsyncThunk<any, string, { state: RootState
                 throw new Error('Server Error')
             }
             const data: any = await response.json();
-            console.log(data,'detailsBook')
             const book: IBook = {
                         title: data.volumeInfo.title,
                         id: data.id,
-                        author: data.volumeInfo.authors,
+                        author: data.volumeInfo.authors ?? [],
                         categories: data.volumeInfo.categories,
                         description: data.volumeInfo.description,
                         imageLinks: data.volumeInfo.imageLinks ?? {smallThumbnail: '', thumbnail: ''}

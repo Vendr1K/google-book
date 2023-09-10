@@ -5,10 +5,8 @@ import { NotFoundPage } from './Components/Content/NotFoundPage';
 import { Layout } from './Components/Layuot';
 import { BookPageDetail } from './Components/Content/BooksPage/BookPageDetail';
 import './styles.module.css';
-import { KEY } from './models/constants';
 
 function App() {
-  console.log(KEY)
   return (
     <>
         <Routes>

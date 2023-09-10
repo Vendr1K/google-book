@@ -80,7 +80,7 @@ export function Search() {
                     </label>
                     </div>
                     <button disabled={isLoading} className={styles.btn__from}>
-                        Поиск
+                        Search
                         {isLoading && <span className={styles.loader}><Spiner/></span>}
                     </button>
                    

@@ -34,7 +34,13 @@ export function BookPageDetail() {
                             <h3 className={styles.title}>{book.title}</h3>
                             <p className={styles.descr}>{book.description}</p>
                             <span className={styles.category}>{book.categories}</span>
-                            <span className={styles.author}>{book.author}</span>
+                            <span className={styles.author}>
+                                {book.author.length > 1 ? book.author.map((author: string) => {
+                                    return (
+                                        <div>{author}</div>
+                                    )
+                                }) : book.author}
+                            </span>
                         </div>
                         
                 </div>

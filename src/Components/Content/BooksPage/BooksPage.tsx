@@ -12,7 +12,7 @@ export function BooksPage() {
     const isLoading = useAppSelector((state) => state.books.isLoading)
 
     const errorMessange = useAppSelector((state) => state.books.error)
-
+    
     const handleLoad = () => {
         dispatch(changeStepLoad());
         dispatch(fetchBooks(false));
@@ -24,7 +24,7 @@ export function BooksPage() {
                 <div className={styles.total_count}> Total books search {booksInfo.count}</div>
             
                 <ul className={styles.list}>
-                    {booksInfo.books.map((book :IBook) => {
+                    {booksInfo.books.map((book : IBook) => {
                         return ( 
                             <li  key={book.id} className={styles.item}>
                                 <Link to={`/books/${book.id}`}>
@@ -38,7 +38,9 @@ export function BooksPage() {
                                     <div className={styles.item__info}>
                                         <h3 className={styles.item__info__title} >{book.title}</h3>
                                         <span  className={styles.item__info__category} >{book.categories ? book.categories[0] : ''}</span>
-                                        <span className={styles.item__info__author} >{book.author}</span>
+                                        <span className={styles.item__info__author} >{
+                                            book.author.length > 1 ? book.author.join(', ') : book.author
+                                        }</span>
                                     </div>
                                 </Link>
                             </li>
