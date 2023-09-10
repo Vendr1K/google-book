@@ -1,0 +1,20 @@
+.wrapper {
+    display: flex;
+    height: 100%;
+    padding-top: 50px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home_page { 
+    border-bottom: 1px solid var(--red-color);
+    transition: all 0.1s ease-in-out, border 0.1s ease-in-out;
+}
+
+
+.home_page:hover {
+    color: var(--marker-color);
+    border-color: var(--marker-color);
+    transition: all 0.1s ease-in-out, border 0.1s ease-in-out;
+}

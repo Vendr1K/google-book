@@ -1,0 +1,8 @@
+.main {
+    position: relative;
+}
+
+.main_container {
+    margin-bottom: var(--container-margin);
+    min-height: calc(100vh - 310px - 60px - 30px);
+}
